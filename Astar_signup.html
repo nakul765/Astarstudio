@@ -1,0 +1,60 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Lobster&family=Lora:ital,wght@0,400..700;1,400..700&family=Sigmar&family=Spectral+SC:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Texturina:ital,opsz,wght@0,12..72,100..900;1,12..72,100..900&family=Tomorrow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Tourney:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/Astar_signup.css">
+    <title>Astar signup page</title>
+  </head>
+  <body>
+    <div class="signup_contain">
+      <div class="h1_contain">
+       <h1><b>Sign up</b></h1>
+      </div>
+      <h3>Username</h3>
+      <div class="contain_of_input">
+       <input class="info" type="text" placeholder="username/email">
+      </div>
+     <h3><b>Number</b></h3>
+     <div class="contain_of_input">
+      <input class="info"  type="number" placeholder="number">
+     </div>
+      <h3><b>Password</b></h3>
+      <div class="contain_of_input">
+        <input class="info" placeholder="password" type="password">
+      </div>
+      <div class="generate_contain">
+        <h3><b>Generate OTP:</b></h3>
+      <button onclick="otp()"class="otp_btn">Generate</button>   
+      </div>
+             <div class="contain_of_input">
+        <input id="#otpanswer"class="info" placeholder="O T P" type="number">
+       </div>
+       <br>
+       <button onclick="check()"class="submit">submit</button>
+    </div>
+  </body>
+  <script>
+    
+   let otpgenerate;
+    function otp()
+    {
+     otpgenerate=Math.floor(1000 + Math.random() * 9000);
+      alert("your otp is: "+otpgenerate);
+    }
+    
+    function check()
+    {
+      let cheker=document.getElementById('#otpanswer').value
+      if(cheker == otpgenerate)
+      {
+        alert('Sign in Success')
+          document.location='/Astar_studio_main.html'
+      }
+      else{
+        alert('please try again');
+        cheker='';
+      }
+    }
+  </script>
+</html>
